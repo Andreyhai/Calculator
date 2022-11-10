@@ -47,6 +47,7 @@
     background: linear-gradient(45deg, orange, brown);
     width: 100px;
     height: 100px;
+    /*border-radius: 50%;*/
 }
 /*анимация нажатия*/
 .button:active {
@@ -59,9 +60,9 @@
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-h1 {
-    text-align: center;
-    color: black;
+.input-text {
+    font-family: "Calibri Light";
+
 }
 
 .header {
@@ -94,13 +95,14 @@ hr {
 
 /*------------------------------------------------навигация-----------------------------------------------------------*/
 .dropbtn {
-    background: linear-gradient(45deg, #8C4422, #7A3300);
+    background: linear-gradient(45deg, orange, brown);
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
 }
+
 /*поиск*/
 .dropdown {
     position: fixed;
@@ -109,16 +111,18 @@ hr {
     right: 100px;
     border-radius: 30px;
 }
+
 .dropdown:hover {
     cursor: pointer;
     transform: translateY(5px);
     box-shadow: 0px 0px transparent, 0px 5px 10px rgba(0, 0, 0, 0.25);
 }
+
 /*вылетающие*/
 .dropdown-content {
     display: none;
     position: absolute;
-    background:linear-gradient(45deg, #8C4422, #7A3300);
+    background: linear-gradient(45deg, orange, brown);
     min-width: 100px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -132,7 +136,11 @@ hr {
 }
 
 .dropdown-content a:hover {
-    background: linear-gradient(45deg, #592b17, #411b02);
+    background: linear-gradient(to right, white, black);
+}
+
+.dropdown-content a:active {
+    background: white;
 }
 
 .dropdown:hover .dropdown-content {
