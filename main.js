@@ -4,15 +4,19 @@ const f = (text) => {
 
 // объявление-----------------------------------------------------------------------------------------------------------
 
-let pole, del, ravenous, str, plus, x1, flag, flag2, x2;
+let pole, ravenous, str, plus, myStr, minus, pro, sqrt, flag, del, theme;
 
 pole = document.querySelector('.input-text');
-del = document.querySelector('.delete');
 ravenous = document.querySelector('#br');
 plus = document.querySelector('#plus');
-str = '';
-x1 = x2 = 0;
-flag = flag2 = false;
+sqrt = document.querySelector('#sqrt');
+pro = document.querySelector('#pro');
+minus = document.querySelector('#minus');
+del = document.querySelector('.delete');
+theme = document.querySelectorAll('.theme');
+flag = false;
+str = myStr = '';
+
 // объявление-----------------------------------------------------------------------------------------------------------
 
 
@@ -24,12 +28,10 @@ flag = flag2 = false;
 // очистка--------------------------------------------------------------------------------------------------------------
 
 del.addEventListener('click',
-    event => {
-        event.preventDefault();
-        str = '';
-        pole.innerText = str;
+    () => {
+    pole.innerText = str = myStr = '';
     }
-);
+)
 
 // очистка--------------------------------------------------------------------------------------------------------------
 
@@ -41,15 +43,19 @@ del.addEventListener('click',
 ravenous.addEventListener('click',
     event => {
         event.preventDefault();
-
-        if (w) {
-            x2 = parseInt(str);
-            f(`x2 = ${x2}`);
-            x1 += x2;
-            f(`x1 + x2 = ${x1}`)
-            pole.innerText = x1;
+        if (flag) {
+            myStr += `${str})`;
+            f(myStr);
+            f(eval(myStr));
+            pole.innerText = eval(myStr);
+            str = myStr = '';
+        } else {
+            f(`str = ${str}`);
+            myStr += str;
+            f(`myStr = ${myStr}`)
+            pole.innerText = eval(myStr);
+            str = myStr = '';
         }
-
     }
 );
 
@@ -62,34 +68,89 @@ ravenous.addEventListener('click',
 plus.addEventListener('click',
     event => {
         event.preventDefault();
-        if (w) {
-            pole.innerText = x1;
-        } else {
-            x1 = parseInt(str);
-            flag = true;
-            f(`x1 = ${x1}`);
-            pole.innerText = str = '';
-        }
+        f(`str = ${str}`);
+
+        myStr += `${str}+`;
+        f(`myStr = ${myStr}`);
+        pole.innerText = str = '';
     }
 );
 
 // плюс-----------------------------------------------------------------------------------------------------------------
 
-let w = false;
+// минус----------------------------------------------------------------------------------------------------------------
+
+minus.addEventListener('click',
+    event => {
+        event.preventDefault();
+        f(`str = ${str}`);
+
+        myStr += `${str}-`;
+        f(`myStr = ${myStr}`);
+        pole.innerText = str = '';
+    }
+);
+
+// минус----------------------------------------------------------------------------------------------------------------
+
+// корень---------------------------------------------------------------------------------------------------------------
+
+sqrt.addEventListener('click',
+    event => {
+        event.preventDefault();
+        f(`str = ${str}`);
+        pole.innerText = sqrt.value;
+        myStr += `Math.sqrt(`;
+        flag = true;
+        f(flag);
+        f(`myStr = ${myStr}`);
+        pole.innerText = str = '';
+    }
+);
+
+// корень---------------------------------------------------------------------------------------------------------------
+
+// произведение---------------------------------------------------------------------------------------------------------
+
+pro.addEventListener('click',
+    event => {
+        event.preventDefault();
+        f(`str = ${str}`);
+
+        myStr += `${str}*`;
+        f(`myStr = ${myStr}`);
+        pole.innerText = str = '';
+    }
+);
+
+// произведение---------------------------------------------------------------------------------------------------------
+
+// тема-----------------------------------------------------------------------------------------------------------------
+
+
+const body = document.querySelector('body');
+document.querySelector('.theme1').addEventListener('click',
+    event => {
+        event.preventDefault();
+        body.cssText = 'background: aqua';
+        alert(0)
+    }
+)
+document.querySelector('.theme2').addEventListener('click',
+    event => {
+        event.preventDefault();
+        body.cssText = 'background: white';
+        alert(1)
+    }
+)
 const getValue = (selector) => {
     const mySelector = document.querySelector('#' + String(selector));
 
     mySelector.addEventListener('click',
         event => {
             event.preventDefault();
-            if (flag) {
-                str += mySelector.value;
-                pole.innerText = str;
-                w = true;
-            } else {
-                str += mySelector.value;
-                pole.innerText = str;
-            }
+            str += mySelector.value;
+            pole.innerText = str;
         }
     );
     return 0;
@@ -106,3 +167,5 @@ button6 = getValue('b6');
 button7 = getValue('b7');
 button8 = getValue('b8');
 button9 = getValue('b9');
+
+f('done');
