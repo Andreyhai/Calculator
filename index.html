@@ -2,42 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" href="style.css">
     <title>Мой калькулятор</title>
 </head>
 <body>
-<h1>Мой калькулятор</h1>
+<div class="header">
+    <h1>Мой калькулятор</h1>
+</div>
 <form class="calculator-window">
+    <td>
+        <span class="input">
+        </span>
+    </td>
+    <td>
+        <input class="delete" id="1" type="button" value="C">
+    </td>
     <table>
         <tr>
-            <td>
-                <input class="input" type="text" placeholder="0">
-                <input type="button" value="C">
-            </td>
+            <td><input class="button" id="b1" type="button" value="1"></td>
+            <td><input class="button" id="b2" type="button" value="2"></td>
+            <td><input class="button" id="b3" type="button" value="3"></td>
+            <td><input class="button" id="plus" type="button" value="+"></td>
         </tr>
         <tr>
-            <td>
-                <input class="C" type="button" value="1">
-                <input class="C" type="button" value="2">
-                <input class="C" type="button" value="3">
-            </td>
+            <td><input class="button" id="b4" type="button" value="4"></td>
+            <td><input class="button" id="b5" type="button" value="5"></td>
+            <td><input class="button" id="b6" type="button" value="6"></td>
         </tr>
         <tr>
-            <td>
-                <input class="C" type="button" value="4">
-                <input class="C" type="button" value="5">
-                <input class="C" type="button" value="6">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input class="C" type="button" value="7">
-                <input class="C" type="button" value="8">
-                <input class="C" type="button" value="9">
-            </td>
+            <td><input class="button" id="b7" type="button" value="7"></td>
+            <td><input class="button" id="b8" type="button" value="8"></td>
+            <td><input class="button" id="b9" type="button" value="9"></td>
+            <td><input class="ravenous" id="br" type="button" value="="></td>
         </tr>
     </table>
 </form>
-<script src="main.js"></script>
+<hr>
+<div class="dropdown">
+    <button class="dropbtn">тема</button>
+    <div class="dropdown-content">
+        <a href="*">светлая</a>
+        <a href="*">тёмная</a>
+    </div>
+</div>
+
+<img class="img" src="icons/icons8-vk-в-круге-48.png" title="связаться со мной в вк">
+<img class="img" src="icons/icons8-whatsapp-48.png" title="связаться со мной в WhatsApp">
+<img class="img" src="icons/icons8-телеграмма-app-48.png" title="связаться со мной в Telegram">
+<script src="main.js" type="module"></script>
+<script src="Class.js" type="module"></script>
 </body>
 </html>
