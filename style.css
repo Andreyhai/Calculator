@@ -1,0 +1,156 @@
+/* form */
+.calculator-window {
+    width: 500px;
+    height: 400px;
+    border-color: goldenrod;
+    border-style: dashed solid ;
+    border-width: 10px;
+    border-radius: 5px;
+    align-content: center;
+    padding: 50px;
+    background: #ccc;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* placeholder */
+.input {
+    width: 80%;
+    height: 50px;
+    background: darkorange;
+    border-color: black;
+    border-radius: 5px;
+    float: left;
+    margin: 5px;
+    display: inline-block;
+}
+
+/* button */
+.button {
+    background: linear-gradient(45deg, orange, brown);
+    width: 80px;
+    height: 99px;
+}
+
+.delete {
+    background: linear-gradient(45deg, orange, brown);
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.any-button {
+    width: 58px;
+    height: 58px;
+    background: linear-gradient(45deg, orange, brown);
+}
+/*анимация нажатия*/
+.button:active {
+    transform: scale(0.9);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.ravenous:active {
+    transform: scale(0.9);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.input-text {
+    font-family: "Calibri Light", emoji;
+
+}
+
+.header {
+    background: linear-gradient(45deg, orange, brown);
+    border-radius: 30px;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+hr {
+    width: 400px;
+    position: relative;
+    top: 750px;
+}
+
+.img {
+    position: relative;
+    top: 750px;
+    left: 45%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+table {
+    float: left;
+}
+
+/*------------------------------------------------навигация-----------------------------------------------------------*/
+.dropbtn {
+    background: linear-gradient(45deg, orange, brown);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/*поиск*/
+.dropdown {
+    position: fixed;
+    display: inline-block;
+    top: 10px;
+    right: 100px;
+}
+
+.dropdown:hover {
+    cursor: pointer;
+    transform: translateY(5px);
+}
+
+/*вылетающие*/
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: linear-gradient(45deg, orange, brown);
+    min-width: 100px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background: linear-gradient(to right, white, black);
+}
+
+.dropdown-content a:active {
+    background: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: rgba(126,130,138,0.98);
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+
+.dark {
+    background: black;
+}
